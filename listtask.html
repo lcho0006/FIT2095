@@ -1,0 +1,32 @@
+<html>
+    <body>
+    <a href="/">Home</a>
+    <a href="/addtask">Add new Tasks</a><br>
+        <table>
+            <tr>
+                <th>
+                    Name |
+                </th>
+                <th>
+                    Due Date |
+                </th>
+                <th>
+                    Description
+                </th>
+            </tr>
+            <% for(let i=0;i < db.length;i++){ %>
+            <tr>
+                <td>
+                    <%= db[i].TaskName %>
+                </td>
+                <td>
+                    <%= db[i].TaskDue %>
+                </td>
+                <td>
+                    <%= db[i].TaskDesc %>
+                </td>
+            </tr>
+            <% } %>
+        </table>
+    </body>
+</html>
