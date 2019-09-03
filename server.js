@@ -30,6 +30,14 @@ app.get('/addtask',function(req,res){
     res.sendFile(__dirname+"/addtask.html");
 });
 
+app.get('/nonSamLee',function(req,res){
+    col.updateMany({TaskAssign: "Sam"}, {$set:{TaskStatus:"InProgress"}},{upsert: false});
+    col.updateMany({TaskAssign: "Sam"}, {$set:{TaskAssign:"Anna"}},{upsert: false});
+    col.updateMany({TaskAssign: "Lee"}, {$set:{TaskStatus:"InProgress"}},{upsert: false});
+    col.updateMany({TaskAssign: "Lee"}, {$set:{TaskAssign:"Anna"}},{upsert: false});
+    res.sendFile(__dirname+"/nonSamLee.html");
+});
+
 app.get('/deletetask',function(req,res){
     res.sendFile(__dirname+"/deletetask.html");
 });
@@ -76,5 +84,6 @@ app.post('/updatetask',function(req,res){
     col.updateOne({_id: new mongodb.ObjectID(req.body.TaskId)}, {$set:{TaskStatus:req.body.TaskStatus}},{upsert: false});
     res.redirect('/listtask');
 });
+
 //sudo apt install -y mongodb
 app.listen(8080);
