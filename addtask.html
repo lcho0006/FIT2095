@@ -1,12 +1,18 @@
 <html>
-    <body>
-    <a href="/">Home</a>
-    <a href="/listtask">List Tasks</a><br>
-        <form action="/addtask" method=POST>
-            Task Name <input type="text" name="TaskName"><br>
-            Task Due<input type="text" name="TaskDue"><br>
-            Task Desc<input type="text" name="TaskDesc"><br>
-            <button type="submit">Submit</button>
-        </form>
-    </body>
+<body>
+<link rel="stylesheet" href="styles.css">
+<a href="/">Home</a> <br>
+<form action="/addtask" method=POST>
+    Task Name <input type="text" name="TaskName"><br>
+    Assign To <input type="text" name="TaskAssign"><br>
+    Due Date <input type="date" name="TaskDue"><br>
+    TaskStatus <select name="TaskStatus">
+        <option value="InProgress">InProgress</option>
+        <option value="Complete">Complete</option>
+    </select><br>
+    Task Desc<input type="text" name="TaskDesc"><br>
+    <button type="submit">Submit</button>
+</form>
+</body>
 </html>
+

@@ -1,29 +1,51 @@
 <html>
     <body>
-    <a href="/">Home</a>
-    <a href="/addtask">Add new Tasks</a><br>
+    <link rel="stylesheet" href="styles.css">
+    <a href="/">Home</a> <br>
+    <a href="/addtask"> Add New Task</a> <br>
+    <a href="/deletetask"> Delete Task</a> <br>
+    <a href="/deleteall"> Delete All Task</a> <br>
+    <a href="/updatetask"> Update Task</a> <br>
         <table>
             <tr>
                 <th>
-                    Name |
+                    ID |
                 </th>
                 <th>
-                    Due Date |
+                    TaskName |
                 </th>
                 <th>
-                    Description
+                    TaskAssign |
+                </th>
+                <th>
+                    TaskDue |
+                </th>
+                <th>
+                    TaskStatus |
+                </th>
+                <th>
+                    TaskDesc
                 </th>
             </tr>
-            <% for(let i=0;i < db.length;i++){ %>
+            <% for(let i=0;i < data.length;i++){ %>
             <tr>
                 <td>
-                    <%= db[i].TaskName %>
+                    <%= data[i]._id %>
                 </td>
                 <td>
-                    <%= db[i].TaskDue %>
+                    <%= data[i].TaskName %>
                 </td>
                 <td>
-                    <%= db[i].TaskDesc %>
+                    <%= data[i].TaskAssign %>
+                </td>
+                <td>
+                    <%= data[i].TaskDue %>
+                </td>
+                <td>
+                    <%= data[i].TaskStatus %>
+                </td>
+                <td>
+                    <%= data[i].TaskDesc %>
                 </td>
             </tr>
             <% } %>
