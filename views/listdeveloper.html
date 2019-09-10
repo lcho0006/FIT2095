@@ -1,0 +1,62 @@
+<html>
+<body>
+<link rel="stylesheet" href="styles.css">
+<a href="/">Home</a> <br>
+<table>
+    <tr>
+        <th>
+            ID |
+        </th>
+        <th>
+            FirstName |
+        </th>
+        <th>
+            LastName |
+        </th>
+        <th>
+            Level |
+        </th>
+        <th>
+            State |
+        </th>
+        <th>
+            Suburb |
+        </th>
+        <th>
+            Street |
+        </th>
+        <th>
+            Unit
+        </th>
+    </tr>
+    <% for(let i=0;i < data.length;i++){ %>
+    <tr>
+        <td>
+            <%= data[i]._id %>
+        </td>
+        <td>
+            <%= data[i].Name.FirstName %>
+        </td>
+        <td>
+            <%= data[i].Name.LastName %>
+        </td>
+        <td>
+            <%= data[i].Level %>
+        </td>
+        <td>
+            <%= data[i].Address.State %>
+        </td>
+        <td>
+            <%= data[i].Address.Suburb %>
+        </td>
+        <td>
+            <%= data[i].Address.Street %>
+        </td>
+        <td>
+            <%= data[i].Address.Unit %>
+        </td>
+    </tr>
+    <% } %>
+</table>
+</body>
+</html>
